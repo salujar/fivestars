@@ -7,5 +7,5 @@ require 'logger'
 require_relative '../lib/fivestars'
 
 RSpec.configure do |config|
-  # RSpec runtime configuration
+  config.filter_run_excluding in_development: true
 end

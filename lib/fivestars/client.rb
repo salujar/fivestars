@@ -1,4 +1,5 @@
 require_relative 'api/users'
+require_relative 'helpers/users_helper'
 require_relative './oauth'
 
 module FiveStars
@@ -7,6 +8,7 @@ module FiveStars
     include FiveStars::API::Users::Auth
     include FiveStars::API::Users::Memberships
     include FiveStars::OAuth
+    include FiveStars::UsersHelper
 
     attr_reader :session_token
 
@@ -34,7 +36,7 @@ module FiveStars
     # defaults to staging env.
     def default_fivestars_configuration
       {
-        uri_scheme:     'http',
+        uri_scheme:     'https',
         uri_host:       'www.nerfstars.com',
         uri_base_path:  '/api/unified/',
         auth_site:      'https://www.nerfstars.com',

@@ -7,7 +7,7 @@ require_relative './exceptions'
 module FiveStars
   module OAuth
 
-    def user_verify_pin(opts={})
+    def verify_pin(opts={})
       url = URI.join(api_uri_root, @verify_pin_url).to_s
       body = {
         phone: @phone,
@@ -18,7 +18,7 @@ module FiveStars
     end
 
     def user_auth(opts={})
-      @phone_token = user_verify_pin   # set @phone_token
+      @phone_token = verify_pin   # set @phone_token
 
       url = URI.join(api_uri_root, @login_url).to_s
       body = {
