@@ -1,0 +1,3 @@
+--backtrace -f d -c
+--color
+--require spec_helper
