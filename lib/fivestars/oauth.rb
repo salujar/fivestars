@@ -34,16 +34,13 @@ module FiveStars
       response = HTTParty.send(:post, url, body: body.to_json, headers: headers)
 
       if response.code != 202
-        byebug;
-
-        puts
         raise AuthError, JSON.parse(response.body)['error']
       end
 
+      token = nil
       begin
         parsed_response = JSON.parse(response.body)
 
-        token = nil
         if body.has_key?(:pin)
           token = @phone_token = parsed_response['phone_token']
         elsif body.has_key?(:phone_token)
