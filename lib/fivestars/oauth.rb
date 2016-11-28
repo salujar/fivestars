@@ -30,7 +30,7 @@ module FiveStars
     end
 
     def request_session_token(url, body)
-      puts "\nFiveStars::Auth  POST-ing #{url} with params #{{ body: body.to_json, headers: headers }}\n"
+      # puts "\nFiveStars::Auth  POST-ing #{url} with params #{{ body: body.to_json, headers: headers }}\n"
       response = HTTParty.send(:post, url, body: body.to_json, headers: headers)
 
       if response.code != 202

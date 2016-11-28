@@ -5,8 +5,7 @@ require_relative './oauth'
 module FiveStars
   class Client 
 
-    include FiveStars::API::Users::Auth
-    include FiveStars::API::Users::Memberships
+    include FiveStars::API::Users
     include FiveStars::OAuth
     include FiveStars::UsersHelper
 
@@ -85,7 +84,7 @@ module FiveStars
       params ||= {}
       uri = full_url(path)
 
-      puts "\nFiveStars::Client   #{method.upcase}-ing #{uri} with params #{params.merge(headers: headers, cookies: cookies)}\n\n"
+      # puts "\nFiveStars::Client   #{method.upcase}-ing #{uri} with params #{params.merge(headers: headers, cookies: cookies)}\n\n"
       response = HTTParty.send(method, uri, params.merge(headers: headers, cookies: cookies))
       # puts (response.nil?) ? response : parse(response)
     end
