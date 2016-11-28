@@ -80,19 +80,8 @@ module FiveStars
       response['items']
     end
 
-
-
   end
 end
-
-
-# 5555541943 
-# ["4def0b9054ad40c69e49e8d44b44fe13", "fc883b44a50f4189975b1bcb71fa2f89", "d7d9c34665864043b00dbf9566dafad1", "07aef728f40d456789a798bb261d3616"]
-
-    # remove 07aef728f40d456789a798bb261d3616
-
-# 5555541942
-["c3c18ab8031543fb92d0bf1d9969fb13", "22e377cdd4b2426381e1a9582a287862", "b3065dc3b8fd408481cd4f4edafe348e", "5e633c68ab504e5daa4c49d9554ad7d7", "28118313178f4d2e99d04d2ceb46d2d9", "d028cdac50d14196a137b74fccdd304c"]
 
 
 # ex: POST /verify_in response
